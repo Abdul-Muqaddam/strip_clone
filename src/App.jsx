@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import './App.css'
 import { gsap } from 'gsap'
 import _ScrollTrigger from 'gsap/ScrollTrigger'
+import Services from './components/services'
 
 
 gsap.registerPlugin(_ScrollTrigger)
@@ -10,6 +11,9 @@ gsap.registerPlugin(_ScrollTrigger)
 function App() {
   const imageRef=useRef(null);
   useEffect(()=>{
+    gsap.to(imageRef.current,{
+      scroll
+    })
 
   },[])
   return (
@@ -120,6 +124,7 @@ function App() {
           </div>
         </div>
       </main>
+      <Services/>
     </>
   )
 }
